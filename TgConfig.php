@@ -5,10 +5,11 @@ class TgConfig
     private string $media_directory;
     private string $is_delete_media;
     private string $root_path = __DIR__;
-    private string $theme_path = THEME_PATH;
+    private string $theme_path;
 
     public function __construct()
     {
+        $this->theme_path = get_theme_file_path();
         $this->is_delete_media = true;
         $this->media_directory = $this->root_path . '/files/media/';
     }
