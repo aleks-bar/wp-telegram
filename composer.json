@@ -19,6 +19,11 @@
     "westacks/telebot": "*",
     "wikimedia/composer-merge-plugin": "*"
   },
+  "config": {
+    "allow-plugins": {
+      "*": true
+    }
+  },
   "scripts": {
     "post-create-project-cmd": [
       "php post-create-script.php",
