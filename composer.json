@@ -21,7 +21,7 @@
   },
   "scripts": {
     "post-update-cmd": [
-      "php scripts/post-create-script.php"
+      "php post-create-script.php"
     ]
   }
 }
