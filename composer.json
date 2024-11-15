@@ -1,7 +1,7 @@
 {
   "name": "alex-bar/wp-telegram",
   "description": "Create rout for and send telegram message",
-  "type": "wp-expansions",
+  "type": "project",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
