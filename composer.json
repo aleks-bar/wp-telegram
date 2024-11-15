@@ -1,0 +1,28 @@
+{
+  "name": "alex-bar/wp-telegram",
+  "description": "Create rout for and send telegram message",
+  "type": "wp-expansions",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alexander Bardin",
+      "email": "sergalexbard@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "TelegramClass\\": "class/" },
+    "classmap": [""]
+  },
+  "require": {
+    "composer/installers": "^2.0",
+    "westacks/telebot": "*",
+    "wikimedia/composer-merge-plugin": "*"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "composer update",
+      "php scripts/post-create-script.php"
+    ]
+  }
+}
