@@ -1,4 +1,5 @@
 <?php
+require_once "TgConfig.php";
 $config = TgConfig::getInstance();
 $main_composer_json = $config->themePath() . '/composer.json';
 
