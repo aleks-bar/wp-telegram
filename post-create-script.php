@@ -1,7 +1,5 @@
 <?php
-require_once "TgConfig.php";
-$config = TgConfig::getInstance();
-$main_composer_json = $config->themePath() . '/composer.json';
+$main_composer_json = __DIR__ . '/../composer.json';
 
 if (file_exists($main_composer_json)) {
     $dirname = basename(__DIR__);
