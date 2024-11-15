@@ -20,8 +20,7 @@
     "wikimedia/composer-merge-plugin": "*"
   },
   "scripts": {
-    "post-create-project-cmd": [
-      "composer update",
+    "post-update-cmd": [
       "php scripts/post-create-script.php"
     ]
   }

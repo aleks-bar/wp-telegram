@@ -5,6 +5,7 @@ class TgConfig
     private string $media_directory;
     private string $is_delete_media;
     private string $root_path = __DIR__;
+    private string $theme_path = THEME_PATH;
 
     public function __construct()
     {
@@ -25,6 +26,11 @@ class TgConfig
     public function rootPath(): string
     {
         return $this->root_path;
+    }
+
+    public function themePath(): string
+    {
+        return $this->theme_path;
     }
 
     public static function getInstance(): TgConfig

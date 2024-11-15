@@ -1,5 +1,6 @@
 <?php
-$main_composer_json = __DIR__ . '/../composer.json';
+$config = TgConfig::getInstance();
+$main_composer_json = $config->themePath() . '/composer.json';
 
 if (file_exists($main_composer_json)) {
     $json = json_decode(file_get_contents($main_composer_json), true);
