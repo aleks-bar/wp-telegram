@@ -26,14 +26,9 @@ class Telegram
         $this->bot = TgBot::getInstance();
     }
 
-    public function initSendToGroupChats(array $bots_with_chats = []): void
+    public function initSendToGroupChats(string $token, array $chats = []): void
     {
-        foreach ($bots_with_chats as $bot) {
-            $this->bot->addChatGroupBot(
-                $bot['token'],
-                $bot['chats']
-            );
-        }
+        $this->bot->addChatGroupBot($token, $chats);
 
         $this->api->registerRout(
             'delete-media',
