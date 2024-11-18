@@ -11,15 +11,35 @@ if (file_exists($main_composer_json)) {
     }
 
     if (empty($json['require']['composer/installers'])) {
-        $json['require']['composer/installers'] = ['^2.0'];
+        $json['require']['composer/installers'] = '^2.0';
     }
 
     if (empty($json['require']['westacks/telebot'])) {
-        $json['require']['westacks/telebot'] = ['*'];
+        $json['require']['westacks/telebot'] = '*';
     }
 
     if (empty($json['require']['wikimedia/composer-merge-plugin'])) {
-        $json['require']['wikimedia/composer-merge-plugin'] = ['*'];
+        $json['require']['wikimedia/composer-merge-plugin'] = '*';
+    }
+
+    if (empty($json['config'])) {
+        $json['config'] = [];
+    }
+
+    if (empty($json['config']['allow-plugins'])) {
+        $json['config']['allow-plugins'] = [];
+    }
+
+    if (empty($json['config']['allow-plugins']['composer/installers'])) {
+        $json['config']['allow-plugins']['composer/installers'] = true;
+    }
+
+    if (empty($json['config']['allow-plugins']['wikimedia/composer-merge-plugin'])) {
+        $json['config']['allow-plugins']['wikimedia/composer-merge-plugin'] = true;
+    }
+
+    if (empty($json['config']['allow-plugins']['westacks/telebot'])) {
+        $json['config']['allow-plugins']['westacks/telebot'] = true;
     }
 
     if (empty($json['extra'])) {
