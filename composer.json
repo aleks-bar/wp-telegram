@@ -14,16 +14,6 @@
     "psr-4": { "TelegramClass\\": "class/" },
     "classmap": [""]
   },
-  "require": {
-    "composer/installers": "^2.0",
-    "westacks/telebot": "*",
-    "wikimedia/composer-merge-plugin": "*"
-  },
-  "config": {
-    "allow-plugins": {
-      "*": true
-    }
-  },
   "scripts": {
     "post-create-project-cmd": [
       "php post-create-script.php"
