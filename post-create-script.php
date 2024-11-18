@@ -1,10 +1,12 @@
 <?php
 $parent_dir = dirname(__DIR__);
 $main_composer_json = $parent_dir . '/composer.json';
+$local_composer_json = __DIR__ . '/composer.json';
 
-if (file_exists($main_composer_json)) {
+if (file_exists($main_composer_json) && file_exists($local_composer_json)) {
     $dirname = basename(__DIR__);
     $json = json_decode(file_get_contents($main_composer_json), true);
+    $local_json = json_decode(file_get_contents($local_composer_json), true);
 
     if (empty($json['require'])) {
         $json['require'] = [];
@@ -30,16 +32,8 @@ if (file_exists($main_composer_json)) {
         $json['config']['allow-plugins'] = [];
     }
 
-    if (empty($json['config']['allow-plugins']['composer/installers'])) {
-        $json['config']['allow-plugins']['composer/installers'] = true;
-    }
-
-    if (empty($json['config']['allow-plugins']['wikimedia/composer-merge-plugin'])) {
-        $json['config']['allow-plugins']['wikimedia/composer-merge-plugin'] = true;
-    }
-
-    if (empty($json['config']['allow-plugins']['westacks/telebot'])) {
-        $json['config']['allow-plugins']['westacks/telebot'] = true;
+    if (!empty($local_json['config']['allow-plugins'])) {
+        $json['config']['allow-plugins'] = array_merge($json['config']['allow-plugins'], $local_json['config']['allow-plugins']);
     }
 
     if (empty($json['extra'])) {
