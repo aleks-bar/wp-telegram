@@ -2,7 +2,7 @@
 Установку нужно выполнить в корне темы.<br>
 При установке соглашаемся со всем что предлагается.
 ```
-composer create-project aleks-bar/wp-telegram telegram
+composer create-project alex-bar/wp-telegram telegram
 ```
 > [!WARNING]
 > Обязательно нужно либо указать название директории после `alex-bar/wp-telegram` либо создать её заранее и установить из нёё
